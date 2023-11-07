@@ -162,3 +162,9 @@ WHERE hero_id = 1;
 -- Delete the item associated with hero 1
 DELETE FROM public.heroitem
 WHERE hero_id = 1;
+
+--Select active players
+SELECT p.player_name, h.hero_name
+FROM public.player p
+INNER JOIN public.hero h ON p.hero_id = h.hero_id
+WHERE h.is_active = true;
